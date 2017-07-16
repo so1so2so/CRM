@@ -1,0 +1,10 @@
+{% extends 'index.html' %}
+{% block page-head %}
+
+        <form action="" method="post">
+            {% csrf_token %}
+        <input type="text" name="username">
+        <input type="password" name="password">
+        <input type="submit" name="提交">
+        </form>
+{% endblock %}

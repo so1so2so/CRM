@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Old CRM</h1>
+{% block page-head %}
+welcome orm
+    <div>
+    {% if request.user.is_authenticated %}
+    <span>{{ request.user.userprofile.name }}</span>
+        {% else %}
+        <span>登录</span>
+    {% endif %}
+    </div>
+{% endblock %}
+
+</body>
+</html>
