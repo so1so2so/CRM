@@ -16,8 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 from app import views
+import xadmin
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^xadmin/', xadmin.site.urls),
     url(r'^index', views.index),
     url(r'^accounts/login/', views.login),
 ]
