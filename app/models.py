@@ -34,8 +34,10 @@ class Course(models.Model):
     price = models.IntegerField(u"面授价格")
     online_price = models.IntegerField(u"网络班价格")
     brief = models.TextField(u"课程简介")
+
     class Meta:
         verbose_name_plural = u"课程"
+
     def __unicode__(self):
         return self.name
 
@@ -49,7 +51,7 @@ class ClassList(models.Model):
     teachers = models.ManyToManyField(UserProfile, verbose_name=u"讲师")
 
     def __unicode__(self):
-       return "%s(%s)" %(self.course.name,self.course_type)
+        return "%s(%s)" % (self.course.name, self.course_type)
 
     class Meta:
         verbose_name = u'班级列表'
@@ -89,6 +91,7 @@ class Customer(models.Model):
     date = models.DateField(u"咨询日期", auto_now_add=True)
 
     class_list = models.ManyToManyField('ClassList', verbose_name=u"已报班级", blank=True)
+
     class Meta:
         verbose_name_plural = u"客户名单"
 
